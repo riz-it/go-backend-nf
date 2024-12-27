@@ -61,10 +61,44 @@ func (j *JWTHelperImpl) GenerateTokens(userID uint) (string, string, error) {
 
 // ValidateAccessToken implements domain.JWTHelper.
 func (j *JWTHelperImpl) ValidateAccessToken(tokenString string) (uint, error) {
-	panic("unimplemented")
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, jwt.ErrInvalidKey
+		}
+		return []byte(j.Config.Jwt.AccessTokenKey), nil
+	})
+
+	if err != nil {
+		return 0, err
+	}
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		userID := uint(claims["sub"].(float64))
+		return userID, nil
+	}
+
+	return 0, jwt.ErrInvalidKey
+
 }
 
 // ValidateRefreshToken implements domain.JWTHelper.
 func (j *JWTHelperImpl) ValidateRefreshToken(tokenString string) (uint, error) {
-	panic("unimplemented")
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, jwt.ErrInvalidKey
+		}
+		return []byte(j.Config.Jwt.RefreshTokenKey), nil
+	})
+
+	if err != nil {
+		return 0, err
+	}
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		userID := uint(claims["sub"].(float64))
+		return userID, nil
+	}
+
+	return 0, jwt.ErrInvalidKey
+
 }

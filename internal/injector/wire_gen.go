@@ -10,6 +10,7 @@ import (
 	"github.com/google/wire"
 	"riz.it/nurul-faizah/internal/config"
 	"riz.it/nurul-faizah/internal/delivery/controller"
+	"riz.it/nurul-faizah/internal/delivery/middleware"
 	"riz.it/nurul-faizah/internal/delivery/route"
 	"riz.it/nurul-faizah/internal/domain"
 	"riz.it/nurul-faizah/internal/repository"
@@ -21,14 +22,15 @@ import (
 func InitializedApp() *config.App {
 	bootstrap := config.Get()
 	app := config.NewFiber(bootstrap)
+	jwtHelper := usecase.NewJWTHelperImpl(bootstrap)
+	v := middleware.NewAuthMiddleware(jwtHelper)
 	logger := config.NewLogger(bootstrap)
 	db := config.NewDatabase(bootstrap, logger)
 	validate := config.NewValidator(bootstrap)
 	userAccountRepository := repository.NewUserAccount(logger)
-	jwtHelper := usecase.NewJWTHelperImpl(bootstrap)
 	authUseCase := usecase.NewAuthUseCase(db, logger, validate, userAccountRepository, jwtHelper)
 	authController := controller.NewAuthController(authUseCase, logger)
-	routerConfig := route.NewRouter(app, authController)
+	routerConfig := route.NewRouter(app, v, authController)
 	configApp := config.NewApp(routerConfig, bootstrap)
 	return configApp
 }
@@ -36,3 +38,5 @@ func InitializedApp() *config.App {
 // injector.go:
 
 var authSet = wire.NewSet(repository.NewUserAccount, wire.Bind(new(domain.UserAccountRepository), new(*repository.UserAccountRepository)), usecase.NewAuthUseCase, controller.NewAuthController)
+
+var middlewareSet = wire.NewSet(middleware.NewAuthMiddleware)

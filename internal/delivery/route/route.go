@@ -12,7 +12,7 @@ type RouterConfig struct {
 	App *fiber.App
 }
 
-func NewRouter(r *fiber.App, authController *controller.AuthController) *RouterConfig {
+func NewRouter(r *fiber.App, auth fiber.Handler, authController *controller.AuthController) *RouterConfig {
 	// Konfigurasi logger menggunakan utils
 	logConfig := utils.ConfigureLogger("./logs", "access_log.json")
 	r.Use(logger.New(logConfig))
@@ -23,6 +23,8 @@ func NewRouter(r *fiber.App, authController *controller.AuthController) *RouterC
 	// Route
 	r.Post("/api/auth/signup", authController.SignUp)
 	r.Post("/api/auth/signin", authController.SignIn)
+	r.Post("/api/auth/refresh", authController.RefreshToken)
+	// r.Delete("/api/auth/signout", auth, authController.SignOut)
 
 	// Mengembalikan RouterConfig
 	return &RouterConfig{

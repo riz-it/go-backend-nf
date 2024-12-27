@@ -7,6 +7,7 @@ import (
 	"github.com/google/wire"
 	"riz.it/nurul-faizah/internal/config"
 	"riz.it/nurul-faizah/internal/delivery/controller"
+	"riz.it/nurul-faizah/internal/delivery/middleware"
 	"riz.it/nurul-faizah/internal/delivery/route"
 	"riz.it/nurul-faizah/internal/domain"
 	"riz.it/nurul-faizah/internal/repository"
@@ -18,6 +19,9 @@ var authSet = wire.NewSet(
 	wire.Bind(new(domain.UserAccountRepository), new(*repository.UserAccountRepository)),
 	usecase.NewAuthUseCase,
 	controller.NewAuthController,
+)
+var middlewareSet = wire.NewSet(
+	middleware.NewAuthMiddleware,
 )
 
 func InitializedApp() *config.App {
@@ -31,6 +35,7 @@ func InitializedApp() *config.App {
 		route.NewRouter,
 		usecase.NewJWTHelperImpl,
 		authSet,
+		middlewareSet,
 	)
 	return nil
 }

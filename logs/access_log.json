@@ -35,3 +35,9 @@
 {"time": "09:28:18", "status": "200", "latency": " 129.121833ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
 {"time": "09:29:22", "status": "200", "latency": "  91.326958ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
 {"time": "09:29:25", "status": "200", "latency": " 112.362721ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "18:59:28", "status": "401", "latency": "    210.805µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "Unauthorized"}
+{"time": "19:11:28", "status": "200", "latency": "  129.27565ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:11:38", "status": "200", "latency": " 166.057677ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "19:29:11", "status": "200", "latency": " 124.670342ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "19:30:02", "status": "200", "latency": "  14.896742ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/refresh", "error": "-"}
+{"time": "19:30:10", "status": "400", "latency": "   3.839911ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/refresh", "error": "Invalid refresh token"}

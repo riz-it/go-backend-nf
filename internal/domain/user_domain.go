@@ -10,4 +10,5 @@ type UserAccountRepository interface {
 	Update(db *gorm.DB, c *entity.UserAccount) error
 	FindByEmail(db *gorm.DB, user *entity.UserAccount, email string) error
 	CountByEmail(db *gorm.DB, email string) (int64, error)
+	FindByID(db *gorm.DB, user *entity.UserAccount, id uint) error
 }

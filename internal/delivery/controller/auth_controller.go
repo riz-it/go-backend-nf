@@ -81,3 +81,33 @@ func (c *AuthController) SignIn(ctx *fiber.Ctx) error {
 		Data:    &response,
 	})
 }
+
+func (c *AuthController) RefreshToken(ctx *fiber.Ctx) error {
+
+	request := new(dto.RefreshTokenRequest)
+	err := ctx.BodyParser(request)
+	if err != nil {
+		return fiber.ErrBadRequest
+	}
+
+	fails := utils.Validate(request)
+	if len(fails) > 0 {
+		return ctx.Status(http.StatusBadRequest).JSON(&dto.ApiResponse[*dto.SignInResponse]{
+			Status:  false,
+			Message: "Validation failed",
+			Errors:  fails,
+			Data:    nil,
+		})
+	}
+
+	response, err := c.AuthUseCase.Refresh(ctx.UserContext(), request)
+	if err != nil {
+		return err
+	}
+
+	return ctx.JSON(&dto.ApiResponse[*dto.SignInResponse]{
+		Status:  true,
+		Message: "Token Refreshed Successfully",
+		Data:    &response,
+	})
+}

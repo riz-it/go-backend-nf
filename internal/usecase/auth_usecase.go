@@ -93,6 +93,46 @@ func (uA *AuthUseCase) SignIn(ctx context.Context, req *dto.SignInRequest) (*dto
 		return nil, fiber.NewError(fiber.StatusInternalServerError, "Internal Server Error")
 	}
 
+	user.HashedRt = refreshToken
+	if err := uA.UserAccountRepository.Update(tx, user); err != nil {
+		uA.Log.Warnf("Failed save user : %+v", err)
+		return nil, fiber.ErrInternalServerError
+	}
+
+	return utils.SignInToResponse(user, accessToken, refreshToken), nil
+
+}
+
+// Refresh implements domain.AuthUseCase.
+func (uA *AuthUseCase) Refresh(ctx context.Context, req *dto.RefreshTokenRequest) (*dto.SignInResponse, error) {
+
+	userID, err := uA.JwtHelper.ValidateRefreshToken(req.RefreshToken)
+	if err != nil {
+		return nil, fiber.NewError(fiber.StatusBadRequest, "Invalid refresh token")
+	}
+
+	tx := uA.DB.WithContext(ctx)
+	user := new(entity.UserAccount)
+	if err := uA.UserAccountRepository.FindByID(tx, user, userID); err != nil {
+		return nil, fiber.NewError(fiber.StatusNotFound, "User not found")
+	}
+
+	if user.HashedRt != req.RefreshToken {
+		return nil, fiber.NewError(fiber.StatusBadRequest, "Invalid refresh token")
+	}
+
+	accessToken, refreshToken, err := uA.JwtHelper.GenerateTokens(uint(user.ID))
+	if err != nil {
+		uA.Log.WithError(err).Error("Failed to generate tokens")
+		return nil, fiber.ErrInternalServerError
+	}
+
+	user.HashedRt = refreshToken
+	if err := uA.UserAccountRepository.Update(tx, user); err != nil {
+		uA.Log.Warnf("Failed save user : %+v", err)
+		return nil, fiber.ErrInternalServerError
+	}
+
 	return utils.SignInToResponse(user, accessToken, refreshToken), nil
 
 }

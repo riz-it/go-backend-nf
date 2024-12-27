@@ -9,4 +9,5 @@ import (
 type AuthUseCase interface {
 	SignUp(ctx context.Context, req *dto.SignUpRequest) (*dto.SignUpResponse, error)
 	SignIn(ctx context.Context, req *dto.SignInRequest) (*dto.SignInResponse, error)
+	Refresh(ctx context.Context, req *dto.RefreshTokenRequest) (*dto.SignInResponse, error)
 }
