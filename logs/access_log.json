@@ -1,0 +1,37 @@
+{"time": "17:45:18", "status": "400", "latency": "  11.026747ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "email already exists"}
+{"time": "18:09:08", "status": "400", "latency": "    511.553µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "-"}
+{"time": "18:09:18", "status": "400", "latency": "    262.565µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "-"}
+{"time": "18:10:38", "status": "400", "latency": "    256.742µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "-"}
+{"time": "18:16:11", "status": "400", "latency": "     478.68µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "-"}
+{"time": "18:59:47", "status": "400", "latency": "    744.459µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "-"}
+{"time": "19:00:14", "status": "400", "latency": "  41.618221ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "email already exists"}
+{"time": "19:00:24", "status": "400", "latency": "   5.947462ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "email already exists"}
+{"time": "19:00:28", "status": "400", "latency": "    4.62521ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "email already exists"}
+{"time": "19:07:13", "status": "200", "latency": "  1.63083335s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:07:19", "status": "200", "latency": " 1.526896311s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:07:21", "status": "200", "latency": " 1.574433741s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:08:15", "status": "404", "latency": "    107.588µs", "ip": "127.0.0.1", "method": "GET", "path": "/customers", "error": "Cannot GET /customers"}
+{"time": "19:09:05", "status": "404", "latency": "     22.322µs", "ip": "127.0.0.1", "method": "GET", "path": "/customers", "error": "Cannot GET /customers"}
+{"time": "19:09:09", "status": "200", "latency": " 1.530711893s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:39:31", "status": "200", "latency": " 1.609468221s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:39:34", "status": "200", "latency": " 1.470392822s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:39:41", "status": "200", "latency": " 1.677301263s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signUp", "error": "-"}
+{"time": "19:42:19", "status": "200", "latency": " 1.534148739s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:43:31", "status": "400", "latency": "    133.904µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:43:37", "status": "200", "latency": " 1.355952352s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:44:39", "status": "200", "latency": " 1.403154953s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:44:51", "status": "200", "latency": " 1.566203227s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:52:20", "status": "200", "latency": " 1.599481193s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:52:23", "status": "409", "latency": "  10.206431ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "Conflict"}
+{"time": "19:52:25", "status": "409", "latency": "   5.644781ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "Conflict"}
+{"time": "19:52:26", "status": "409", "latency": "  17.729739ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "Conflict"}
+{"time": "19:53:22", "status": "409", "latency": "   9.621014ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "Conflict"}
+{"time": "19:53:26", "status": "200", "latency": "   1.6203042s", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:54:41", "status": "400", "latency": "  13.231984ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "email already exists"}
+{"time": "19:54:45", "status": "200", "latency": " 115.554535ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:57:45", "status": "400", "latency": "  14.050081ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "email already exists"}
+{"time": "19:57:47", "status": "200", "latency": " 191.010375ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:57:52", "status": "200", "latency": "  123.13283ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "09:28:18", "status": "200", "latency": " 129.121833ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "09:29:22", "status": "200", "latency": "  91.326958ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "09:29:25", "status": "200", "latency": " 112.362721ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
