@@ -41,3 +41,12 @@
 {"time": "19:29:11", "status": "200", "latency": " 124.670342ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
 {"time": "19:30:02", "status": "200", "latency": "  14.896742ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/refresh", "error": "-"}
 {"time": "19:30:10", "status": "400", "latency": "   3.839911ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/refresh", "error": "Invalid refresh token"}
+{"time": "11:56:13", "status": "200", "latency": " 141.168509ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "11:57:24", "status": "401", "latency": "     59.962µs", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "Unauthorized"}
+{"time": "11:57:27", "status": "401", "latency": "     33.875µs", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "Unauthorized"}
+{"time": "11:57:28", "status": "401", "latency": "     18.899µs", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "Unauthorized"}
+{"time": "11:57:38", "status": "401", "latency": "     28.757µs", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "Unauthorized"}
+{"time": "11:57:39", "status": "401", "latency": "     17.167µs", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "Unauthorized"}
+{"time": "11:58:28", "status": "200", "latency": "  23.556033ms", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "-"}
+{"time": "11:58:31", "status": "401", "latency": "   6.538978ms", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "User already logout"}
+{"time": "11:58:33", "status": "401", "latency": "   6.107926ms", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "User already logout"}

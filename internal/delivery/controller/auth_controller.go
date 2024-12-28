@@ -111,3 +111,17 @@ func (c *AuthController) RefreshToken(ctx *fiber.Ctx) error {
 		Data:    &response,
 	})
 }
+
+func (c *AuthController) SignOut(ctx *fiber.Ctx) error {
+	userID := ctx.Locals("userId").(uint)
+
+	err := c.AuthUseCase.SignOut(ctx.UserContext(), userID)
+	if err != nil {
+		return err
+	}
+
+	return ctx.JSON(&dto.ApiResponse[*dto.SignInResponse]{
+		Status:  true,
+		Message: "SignOut Successfully",
+	})
+}

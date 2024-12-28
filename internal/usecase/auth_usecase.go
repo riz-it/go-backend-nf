@@ -103,6 +103,29 @@ func (uA *AuthUseCase) SignIn(ctx context.Context, req *dto.SignInRequest) (*dto
 
 }
 
+// SignOut implements domain.AuthUseCase.
+func (uA *AuthUseCase) SignOut(ctx context.Context, userID uint) error {
+
+	tx := uA.DB.WithContext(ctx)
+	user := new(entity.UserAccount)
+	if err := uA.UserAccountRepository.FindByID(tx, user, userID); err != nil {
+		return fiber.NewError(fiber.StatusNotFound, "User not found")
+	}
+
+	if user.HashedRt == "" {
+		return fiber.NewError(fiber.StatusUnauthorized, "User already logout")
+	}
+
+	user.HashedRt = ""
+	if err := uA.UserAccountRepository.Update(tx, user); err != nil {
+		uA.Log.Warnf("Failed save user : %+v", err)
+		return fiber.ErrInternalServerError
+	}
+
+	return nil
+
+}
+
 // Refresh implements domain.AuthUseCase.
 func (uA *AuthUseCase) Refresh(ctx context.Context, req *dto.RefreshTokenRequest) (*dto.SignInResponse, error) {
 

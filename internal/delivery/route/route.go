@@ -24,7 +24,7 @@ func NewRouter(r *fiber.App, auth fiber.Handler, authController *controller.Auth
 	r.Post("/api/auth/signup", authController.SignUp)
 	r.Post("/api/auth/signin", authController.SignIn)
 	r.Post("/api/auth/refresh", authController.RefreshToken)
-	// r.Delete("/api/auth/signout", auth, authController.SignOut)
+	r.Delete("/api/auth/signout", auth, authController.SignOut)
 
 	// Mengembalikan RouterConfig
 	return &RouterConfig{
