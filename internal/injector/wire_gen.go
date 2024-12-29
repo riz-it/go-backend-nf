@@ -30,7 +30,10 @@ func InitializedApp() *config.App {
 	userAccountRepository := repository.NewUserAccount(logger)
 	authUseCase := usecase.NewAuthUseCase(db, logger, validate, userAccountRepository, jwtHelper)
 	authController := controller.NewAuthController(authUseCase, logger)
-	routerConfig := route.NewRouter(app, v, authController)
+	classRepository := repository.NewClass(logger)
+	classUsecase := usecase.NewClassUseCase(db, logger, validate, classRepository)
+	classController := controller.NewClassController(classUsecase, logger)
+	routerConfig := route.NewRouter(app, v, authController, classController)
 	configApp := config.NewApp(routerConfig, bootstrap)
 	return configApp
 }
@@ -38,5 +41,7 @@ func InitializedApp() *config.App {
 // injector.go:
 
 var authSet = wire.NewSet(repository.NewUserAccount, wire.Bind(new(domain.UserAccountRepository), new(*repository.UserAccountRepository)), usecase.NewAuthUseCase, controller.NewAuthController)
+
+var classSet = wire.NewSet(repository.NewClass, wire.Bind(new(domain.ClassRepository), new(*repository.ClassRepository)), usecase.NewClassUseCase, controller.NewClassController)
 
 var middlewareSet = wire.NewSet(middleware.NewAuthMiddleware)

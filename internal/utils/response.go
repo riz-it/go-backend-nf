@@ -24,3 +24,14 @@ func SignInToResponse(userAccount *entity.UserAccount, accessToken string, refre
 		},
 	}
 }
+
+func ClassToResponse(class *entity.Class) *dto.ClassResponse {
+	return &dto.ClassResponse{
+		ID:        class.ID,
+		Name:      class.Name,
+		IsActive:  class.IsActive,
+		Leader:    class.Leader,
+		CreatedAt: class.CreatedAt.Time.String(),
+		UpdatedAt: class.CreatedAt.Time.String(),
+	}
+}

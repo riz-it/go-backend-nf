@@ -50,3 +50,28 @@
 {"time": "11:58:28", "status": "200", "latency": "  23.556033ms", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "-"}
 {"time": "11:58:31", "status": "401", "latency": "   6.538978ms", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "User already logout"}
 {"time": "11:58:33", "status": "401", "latency": "   6.107926ms", "ip": "127.0.0.1", "method": "DELETE", "path": "/api/auth/signout", "error": "User already logout"}
+{"time": "19:53:09", "status": "401", "latency": "    514.757µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "Unauthorized"}
+{"time": "19:53:16", "status": "200", "latency": " 141.211751ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "19:53:31", "status": "400", "latency": "     65.405µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "Bad Request"}
+{"time": "19:53:50", "status": "500", "latency": "   5.302134ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "Internal Server Error"}
+{"time": "19:58:12", "status": "200", "latency": " 119.469182ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signup", "error": "-"}
+{"time": "19:58:16", "status": "200", "latency": " 113.332844ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "19:58:28", "status": "200", "latency": "  25.628931ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "19:59:34", "status": "200", "latency": " 114.990799ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/signin", "error": "-"}
+{"time": "20:00:06", "status": "200", "latency": "  13.789659ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:08", "status": "200", "latency": "  10.031109ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:09", "status": "200", "latency": "   16.25273ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:09", "status": "200", "latency": "  18.295647ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:10", "status": "200", "latency": "  14.576132ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:11", "status": "200", "latency": "  18.559404ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:11", "status": "200", "latency": "  10.264554ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:12", "status": "200", "latency": "  12.245767ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:13", "status": "200", "latency": "  19.238596ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:14", "status": "200", "latency": "   22.43481ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:15", "status": "200", "latency": "  15.031253ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:15", "status": "200", "latency": "  14.482207ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:16", "status": "200", "latency": "  11.324217ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:16", "status": "200", "latency": "    9.58515ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:17", "status": "200", "latency": "  17.422333ms", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "-"}
+{"time": "20:00:48", "status": "401", "latency": "    132.619µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "Unauthorized"}
+{"time": "20:00:51", "status": "401", "latency": "     96.807µs", "ip": "127.0.0.1", "method": "POST", "path": "/api/class", "error": "Unauthorized"}

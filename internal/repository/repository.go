@@ -1,6 +1,8 @@
 package repository
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
 type Repository[T any] struct {
 	DB *gorm.DB
@@ -24,10 +26,4 @@ func (r *Repository[T]) FindByID(db *gorm.DB, entity *T, id uint) error {
 
 func (r *Repository[T]) FindAll(db *gorm.DB, entity *[]T) error {
 	return db.Find(entity).Error
-}
-
-func (r *Repository[T]) CountByEmail(db *gorm.DB, email string) (int64, error) {
-	var total int64
-	err := db.Model(new(T)).Where("email = ?", email).Count(&total).Error
-	return total, err
 }

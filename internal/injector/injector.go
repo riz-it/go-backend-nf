@@ -20,6 +20,13 @@ var authSet = wire.NewSet(
 	usecase.NewAuthUseCase,
 	controller.NewAuthController,
 )
+
+var classSet = wire.NewSet(
+	repository.NewClass,
+	wire.Bind(new(domain.ClassRepository), new(*repository.ClassRepository)),
+	usecase.NewClassUseCase,
+	controller.NewClassController,
+)
 var middlewareSet = wire.NewSet(
 	middleware.NewAuthMiddleware,
 )
@@ -35,6 +42,7 @@ func InitializedApp() *config.App {
 		route.NewRouter,
 		usecase.NewJWTHelperImpl,
 		authSet,
+		classSet,
 		middlewareSet,
 	)
 	return nil
