@@ -22,7 +22,7 @@ func NewJWTHelperImpl(config *config.Bootstrap) domain.JWTHelper {
 func (j *JWTHelperImpl) GenerateTokens(userID uint) (string, string, error) {
 	iss := j.Config.Server.Host
 	aud := j.Config.Server.Host
-	exp := time.Now().Add(time.Minute * 1).Unix()
+	exp := time.Now().Add(time.Hour * 1).Unix()
 	expRefresh := time.Now().Add(time.Hour * 24).Unix()
 	sub := userID
 
